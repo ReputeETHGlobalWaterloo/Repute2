@@ -1,26 +1,45 @@
-specVersion: 0.0.4
-description: Greetings
-repository: https://github.com/scaffold-eth/se-2/packages/subgraph/
+specVersion: 0.0.5
 schema:
-  file: ./src/schema.graphql
+  file: ./schema.graphql
 dataSources:
-  - kind: ethereum/contract
-    name: YourContract
-    network: localhost
+  - kind: ethereum
+    name: OTCV2
+    network: mumbai
     source:
-      abi: YourContract
-      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+      address: "0x7564BcD038784424BA1900cb99AAd5DCD85AB019"
+      abi: OTCV2
+      startBlock: 37232283
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - Greeting
-        - Sender
+        - AttestorSwapped
+        - ExpiryExtended
+        - IDUnverified
+        - IDVerified
+        - OfferPosted
+        - OfferTaken
+        - Refunded
+        - TradeSettled
       abis:
-        - name: YourContract
-          file: ./abis/localhost_YourContract.json
+        - name: OTCV2
+          file: ./abis/OTCV2.json
       eventHandlers:
-        - event: GreetingChange(address,string,bool,uint256)
-          handler: handleGreetingChange
-      file: ./src/mapping.ts
+        - event: AttestorSwapped(indexed uint256,indexed address)
+          handler: handleAttestorSwapped
+        - event: ExpiryExtended(indexed uint256,uint256)
+          handler: handleExpiryExtended
+        - event: IDUnverified(indexed address)
+          handler: handleIDUnverified
+        - event: IDVerified(indexed address)
+          handler: handleIDVerified
+        - event: OfferPosted(indexed uint256,string,string,indexed address,uint256,uint256)
+          handler: handleOfferPosted
+        - event: OfferTaken(indexed uint256,indexed address,uint256)
+          handler: handleOfferTaken
+        - event: Refunded(indexed uint256,indexed address,indexed address,uint256,uint256)
+          handler: handleRefunded
+        - event: TradeSettled(indexed uint256,indexed address,indexed address,uint256,uint256)
+          handler: handleTradeSettled
+      file: ./src/otcv-2.ts
