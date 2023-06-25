@@ -41,30 +41,51 @@ export const ProposalInput = () => {
               <label className="label">
                 <span className="label-text">Deal Type</span>
               </label>
-              <input type="text" placeholder="SAFT" className="input input-bordered" />
-            </div>
-            <div className="form-control">
+              <input
+                type="text"
+                placeholder="SAFT"
+                className="input input-bordered"
+                value={_dealType}
+                onChange={e => setDealType(e.target.value)}
+              />
+
               <label className="label">
                 <span className="label-text">Opportunity Name</span>
               </label>
-              <input type="text" placeholder="I want to sell XXX for XXX$" className="input input-bordered" />
-            </div>
-            <div className="form-control">
+              <input
+                type="text"
+                placeholder="I want to sell XXX for XXX$"
+                className="input input-bordered"
+                value={_opportunityName}
+                onChange={(e) => setOpportunityName(e.target.value)}
+              />
+
               <label className="label">
                 <span className="label-text">Expiry Block</span>
               </label>
               <label className="input-group">
-                <input type="text" placeholder="100000000" className="input input-bordered" />
-                <span>BTC</span>
+                <input
+                  type="number"
+                  placeholder="100000000"
+                  value={_expiryBlock}
+                  onChange={(e) => setExpiryBlock(e.target.valueAsNumber)} 
+                  className="input w-80 input-bordered"
+                />
+                <span className="w-20">Block</span>
               </label>
-            </div>
-            <div className="form-control">
+
               <label className="label">
                 <span className="label-text">Seller&apos; deposit</span>
               </label>
               <label className="input-group">
-                <input type="text" placeholder="1000000000000" className="input input-bordered" />
-                <span>Wei</span>
+                <input
+                  type="number"
+                  value={_sellerDeposit}
+                  onChange={e => setSellerDeposit(e.target.valueAsNumber)}
+                  placeholder="1000000000000"
+                  className="input w-80 input-bordered"
+                />
+                <span className="w-20">Wei</span>
               </label>
             </div>
             <div className="form-control">
@@ -72,8 +93,14 @@ export const ProposalInput = () => {
                 <span className="label-text">Buyer&apos; deposit</span>
               </label>
               <label className="input-group">
-                <input type="text" placeholder="v" className="input input-bordered" />
-                <span>Wei</span>
+                <input
+                  type="number"
+                  value={_buyerDeposit}
+                  onChange={e => setBuyerDeposit(e.target.valueAsNumber)}
+                  placeholder="1000000000000"
+                  className="input w-80 input-bordered"
+                />
+                <span className="w-20">Wei</span>
               </label>
             </div>
             <div className="form-control mt-6">
