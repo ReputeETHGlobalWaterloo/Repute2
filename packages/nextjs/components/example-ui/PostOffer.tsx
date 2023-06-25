@@ -4,6 +4,7 @@ import { DiamondIcon } from "./assets/DiamondIcon";
 import { HareIcon } from "./assets/HareIcon";
 import { ArrowSmallRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useScaffoldContractWrite } from "~~/hooks/scaffold-eth";
+import { BigNumber } from "ethers";
 
 export const ContractInteraction = () => {
   const [visible, setVisible] = useState(true);
@@ -20,9 +21,9 @@ export const ContractInteraction = () => {
     args: [
       _dealType,
       _opportunityName,
-      _expiryBlock, // Assign BigNumber directly without calling toString()
-      _sellerDeposit, // Assign BigNumber directly without calling toString()
-      _buyerDeposit, // Assign BigNumber directly without calling toString()
+      BigNumber.from(_expiryBlock), // Assign BigNumber directly without calling toString()
+      BigNumber.from(_sellerDeposit), // Assign BigNumber directly without calling toString()
+      BigNumber.from(_buyerDeposit), // Assign BigNumber directly without calling toString()
     ],
     value: _sellerDeposit.toString(),
   });
@@ -46,7 +47,7 @@ export const ContractInteraction = () => {
     <input
       type="number"
       value={_expiryBlock}
-      onChange={(e) => setExpiryBlock(e.target.valueAsNumber)}
+      onChange={(e) => setExpiryBlock(e.target.valueAsNumber)} 
     />
     <label>Seller Deposit:</label>
     <input

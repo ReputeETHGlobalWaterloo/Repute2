@@ -64,13 +64,6 @@ contract OTCV2 {
         actionId = abi.encodePacked("registeruser").hashToField();
         admin = msg.sender;
     }
-    
-    function worldIDVerify() external {
-
-
-        worldIDVerified[msg.sender] = true;
-        emit IDVerified(msg.sender);
-    }
 
     /// @notice Verify an ETH address profile
     /// @param userAddress The address profile you want to verify
