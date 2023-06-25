@@ -9,13 +9,13 @@ import "hardhat-deploy";
 const providerApiKey = process.env.ALCHEMY_API_KEY || "oKxs-03sij-U_N0iOlrSsZFr29-IqbuF";
 // If not set, it uses the hardhat account 0 private key.
 const deployerPrivateKey =
-  process.env.DEPLOYER_PRIVATE_KEY ?? "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
+  process.env.DEPLOYER_PRIVATE_KEY ?? "1a5b9f238d6e4f0c72a96bc3d8f7e2d0a1b3c4d5e6f7a8b9c1d2e3f4a5b6c7d8";
 // If not set, it uses ours Etherscan default API key.
-const etherscanApiKey = process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
+const etherscanApiKey = process.env.ETHERSCAN_API_KEY || "F9R6AZHWMIGK2EYF332SATW6BQIHVF8J6B";
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.17",
-  defaultNetwork: "localhost",
+  solidity: "0.8.18",
+  defaultNetwork: "polygonMumbai",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
@@ -64,7 +64,7 @@ const config: HardhatUserConfig = {
       accounts: [deployerPrivateKey],
     },
     polygonMumbai: {
-      url: `https://polygon-mumbai.g.alchemy.com/v2/${providerApiKey}`,
+      url: `https://methodical-wider-dew.matic-testnet.discover.quiknode.pro/5b842fb2abb55d770ef557273ffd342c65909140/`,
       accounts: [deployerPrivateKey],
     },
   },
