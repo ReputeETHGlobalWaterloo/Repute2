@@ -7,7 +7,6 @@ import { useScaffoldContractWrite } from "~~/hooks/scaffold-eth";
 import { BigNumber } from "ethers";
 
 export const ContractInteraction = () => {
-  const [visible, setVisible] = useState(true);
 
   const [_dealType, setDealType] = useState("");
   const [_opportunityName, setOpportunityName] = useState("");
