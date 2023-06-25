@@ -29,10 +29,11 @@ export const ProposalInput = () => {
         <div className="text-center lg:text-left pl-10">
           <h1 className="text-5xl font-bold">Post the deal now!</h1>
           <p className="py-6">
-            Post the deal with your mind assured!Have a special investment opportunity to sell? Post your offer here.
-            Just fill in the type of opportunity your are offering (i.e. claims, SAFT, or SAFE), some details on the
-            opportunity, your asking price, the expiration time of the offer, and the amount of collateral that you want
-            to post.
+          Have a special investment opportunity to sell? Post your offer here.
+          Just fill in the type of opportunity your are offering (i.e. claims, SAFT, or SAFE),
+          some details on the opportunity, your asking price, the expiration time of the offer,
+           and the amount of collateral that you want to post.
+
           </p>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
