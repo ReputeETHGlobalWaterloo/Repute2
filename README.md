@@ -59,3 +59,6 @@ https://mumbai.polygonscan.com/address/0x7564bcd038784424ba1900cb99aad5dcd85ab01
 
 Graph QL is deployed on testnet
 deployment ID QmToq4UhjQxfaQqqHnMtGM18Wk9CJzUq21p8kVgeaofqor
+
+Deck is avaliable at:
+https://docs.google.com/presentation/d/1vo2BbLMrKxo1-Ys-fwdY4SfKSFJUYsQa-f3WDvVMJUY/edit#slide=id.g254f7c9d698_3_6
