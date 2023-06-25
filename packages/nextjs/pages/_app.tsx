@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { RainbowKitProvider, darkTheme, lightTheme } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
+import { SessionProvider, useSession } from "next-auth/react";
 import NextNProgress from "nextjs-progressbar";
 import { Toaster } from "react-hot-toast";
 import { useDarkMode } from "usehooks-ts";
@@ -39,6 +40,8 @@ const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
     setIsDarkTheme(isDarkMode);
   }, [isDarkMode]);
 
+  const { data: session } = useSession(); // Moved the useSession hook here
+
   return (
     <ApolloProvider client={apolloClient}>
       <WagmiConfig client={wagmiClient}>
@@ -51,7 +54,10 @@ const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="relative flex flex-col flex-1">
-              <Component {...pageProps} />
+              {/* Render the SessionProvider with the session data */}
+              <SessionProvider session={session}>
+                <Component {...pageProps} />
+              </SessionProvider>
             </main>
             <Footer />
           </div>

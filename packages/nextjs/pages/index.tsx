@@ -1,9 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
+import useOffchainTransaction from "../hooks/scaffold-eth/useOffchainTransaction";
+import SignIn from "./signIn";
 import type { NextPage } from "next";
 import { BugAntIcon, SparklesIcon } from "@heroicons/react/24/outline";
 
 const Home: NextPage = () => {
+  useOffchainTransaction();
   return (
     <>
       <Head>
@@ -52,6 +55,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
+      <SignIn />
     </>
   );
 };
