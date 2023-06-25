@@ -54,3 +54,5 @@ OTCV2: add worldcoin integration
 Note tests are only avaliable for OTCV1
 OTCV2 needs to be deployed to Mumbai and test manually due to worldcoin being deployed there
 
+contract is deployed and verified on Polygon Mumbai
+https://mumbai.polygonscan.com/address/0x7564bcd038784424ba1900cb99aad5dcd85ab019
