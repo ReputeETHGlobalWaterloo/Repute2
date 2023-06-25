@@ -56,3 +56,6 @@ OTCV2 needs to be deployed to Mumbai and test manually due to worldcoin being de
 
 contract is deployed and verified on Polygon Mumbai
 https://mumbai.polygonscan.com/address/0x7564bcd038784424ba1900cb99aad5dcd85ab019
+
+Graph QL is deployed on testnet
+deployment ID QmToq4UhjQxfaQqqHnMtGM18Wk9CJzUq21p8kVgeaofqor
