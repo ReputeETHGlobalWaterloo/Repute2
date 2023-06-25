@@ -21,22 +21,47 @@ export const ContractInteraction = () => {
   });
 
   return (
-    <div>
-    {/* Add input components for _dealType, _opportunityName, _expiryBlock, _sellerDeposit, _buyerDeposit */}
-    <label>Deal to swap attestor:</label>
-    <input
-      type="number"
-      value={_dealId}
-      onChange={(e) => setDealID(e.target.valueAsNumber)} 
-    />
-    <label>New attestor:</label>
-    <input
-      type="text"
-      value={_newAttestor}
-      onChange={(e) => setNewAttestor(e.target.value)} 
-    />
-    {/* Add button or trigger to call writeAsync */}
-    <button onClick={writeAsync}>Call writeAsync</button>
+    <div className="hero min-h-screen bg-base-200 p-20">
+    <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="text-center lg:text-left pl-10">
+        <h1 className="text-5xl font-bold">Swap Attestor</h1>
+        <p className="py-6">
+        An attester can not longer fulfil attestation duty? You can swap the old attester 
+        with a new attester by supplying the deal ID and new attester address. Please note 
+        only the admin of Repute can call this function.
+        </p>
+      </div>
+      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card-body">
+          <div className="form-control">
+            <label className="label">
+            <span className="label-text">Deal to swap attestor</span>
+              </label>
+              <input type="number" placeholder="0" className="input input-bordered" />
+          </div>
+          <div className="form-control">
+            <label className="label">
+            <span className="label-text">New attestor address</span>
+              </label>
+              <input type="text" placeholder="0x1234" className="input input-bordered" />
+          </div>
+          <div className="form-control mt-6">
+            <button
+              className={`btn btn-primary rounded-full capitalize font-normal font-white w-24 flex items-center gap-1 hover:gap-2 transition-all tracking-widest ${
+                isLoading ? "loading" : ""
+              }`}
+              onClick={writeAsync}
+            >
+              {!isLoading && (
+                <>
+                  Send <ArrowSmallRightIcon className="w-3 h-3 mt-0.5" />
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   );
 };
