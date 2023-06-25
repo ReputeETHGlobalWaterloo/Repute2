@@ -5,7 +5,7 @@ const contracts = {
       chainId: "80001",
       contracts: {
         OTCV2: {
-          address: "0xdcbc7A2a85e1d3715949CAB5a6BF8F4DEbc59f1f",
+          address: "0x7564bcd038784424ba1900cb99aad5dcd85ab019",
           abi: [
             {
               inputs: [],
